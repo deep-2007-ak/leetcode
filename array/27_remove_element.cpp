@@ -1,10 +1,10 @@
 int removeElement(vector<int>& nums, int val) {
-    for(size_t i=0;i<nums.size();i++){
-        if(nums[i]==val){
-            nums.erase(nums.begin()+i);
-            i--;
+    int k = 0;
+    for(int i = 0; i < nums.size(); i++){
+        if(nums[i] != val){
+            nums[k] = nums[i];
+            k++;
         }
     }
-    return nums.size();
+    return k;
 }
-
