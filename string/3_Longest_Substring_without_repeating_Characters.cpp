@@ -1,5 +1,5 @@
 int lengthOfLongestSubstring(string s) {
-    int left = 0,ans = 0;
+    int left = 0, ans = 0;
     map<char, int> c;
     for(int i = 0; i < s.size(); i++){
         if(c.contains(s[i]) && c[s[i]] >= left)
