@@ -1,9 +1,12 @@
 int majorityElement(vector<int>& nums) {
-    unordered_map<int, int> counts;
-    int n = nums.size();
-    for (int x : nums) {
-        counts[x]++;
-        if (counts[x] > n / 2) return x;
+    int result = nums[0], count = 0;
+    for(const int& i : nums){
+        if(i == result) count++;
+        else count--;
+        if(count == 0){
+            result = i;
+            count = 1;
+        }
     }
-    return -1;
+    return result;
 }
